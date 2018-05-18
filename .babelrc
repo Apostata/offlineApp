@@ -1,0 +1,17 @@
+{
+    "presets":[
+        ["env",{
+                "targets":{
+                    "browsers":["last 2 versions"]
+                },
+                "debug":false
+            }
+        ]
+    ],
+    "plugins":[
+        "transform-runtime",
+        "syntax-dynamic-import",
+        "transform-object-rest-spread"
+        
+    ]
+}
