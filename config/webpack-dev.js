@@ -9,12 +9,27 @@ const webpackConfig = {
         main:['./src/main.js']
     },
     output:{
-        filename: '[name]-bunble.js',
         chunkFilename: "[name].js",
+        filename: '[name]-bunble.js',        
         path: path.resolve(__dirname +"../dist"),
         publicPath: '/'
     },
 
+    optimization: {
+		splitChunks: {
+            automaticNameDelimiter: '-',
+			cacheGroups: {
+				commons: {
+					name: "commons",
+					chunks: "initial",
+					minChunks: 2,
+					minSize: 0
+                }
+			}
+		},
+		occurrenceOrder: true // To keep filename consistent between different modes (for example building only)
+    },
+    
     mode: 'development',
 
     devtool: "source-map",

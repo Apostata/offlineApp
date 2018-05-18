@@ -1,13 +1,14 @@
-import { promisify } from "util";
-
 export default class wsConnection {
     constructor(url){
         this.url = url;
+        this.websocket = {}
     }
-
     connect(){
         return new Promise((resolve, reject)=>{
-            let websocket = new WebSocket(this.url);
+            
+            this.websocket = new WebSocket(this.url);
+            let websocket = this.websocket;
+
             websocket.onopen = ()=>{
                 resolve(websocket);
             };
@@ -15,6 +16,6 @@ export default class wsConnection {
             websocket.onerror = (err)=>{
                 reject(err);
             };
-        })
+        });
     }
 }

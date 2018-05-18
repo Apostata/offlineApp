@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --inspect --watch config --watch src/server src/server/main.js"
+    "dev": "NODE_ENV=development nodemon --inspect --watch config --watch src/server src/server/main.js"
   },
   "author": "Rene Souza",
   "license": "ISC",
@@ -21,7 +21,9 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.17.4",
-    "socket.io": "^2.1.0",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
+    "uuid": "^3.2.1",
     "webpack": "^4.8.3",
     "webpack-dev-middleware": "^3.1.3",
     "webpack-dev-server": "^3.1.4",
